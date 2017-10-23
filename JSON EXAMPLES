@@ -1,0 +1,48 @@
+
+//save data
+db.listdatas.save({
+
+	Title: "SUP",
+	Type: 'BLOG',
+	Title: 'WINE is GOOD',
+	Description: 'NO',
+	Category: 'LIquer',
+	Rating: 5
+
+})
+
+//update array with push
+db.listdatas.update({
+	title: 'Yo'
+	},{
+	 $push :{
+	 	tableContent: {
+	 	Type: 'Book',
+	 	id: ObjectId(),
+		Title: 'Cigars are GOOD',
+		Description: 'FOR SURE',
+		Category: 'Smoke'
+	 	}
+	 }
+})
+
+
+
+
+
+////////
+
+db.listdatas.save({
+	Source: "#",
+	Type: 'Book',
+	Title: 'Wine is GOOD',
+	Description: 'OH YEAH',
+	Category: 'BARRELS',
+	Rating: 2
+})
+
+
+
+
+
+data-href="/resource/{{resource._id}}"

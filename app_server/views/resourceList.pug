@@ -1,0 +1,40 @@
+extends layout
+
+block content
+     .resource-grid(ng-controller='resourceListCTRL')
+         .resource-box.about-a
+              .resource-sub-box.resource-sub-a
+                  h1#yo.resource.lineElements Resource List
+                  span.button_space.uk-button
+                      a.white(href="/resource/add/new") Add Resource
+                  hr.hr_color
+                  .error.resource_Angular {{message}}
+              .resource-sub-box.resource-sub-b
+                  label.resource_Angular(for="filter") Filter results 
+                  input#filter(type="text", name="filter", ng-model="textFilter", style="margin-left: 10px")
+                  
+                  table#sup.resource-table
+                      tr
+                          th#titles.row_header Type
+                          th#titles.row_header Title
+                          th#titles.row_header Description
+                          th#titles.row_header Category
+                          th#titles.row_header Rating
+                          th#titles.row_header More Info
+                          
+                      tr.clickable-row(ng-repeat="resource in data.resources | filter : textFilter")
+                          td#rows.row_data.cell_width(data-th='Type') 
+                             span {{resource.Type}}
+                          td#rows.row_data.title_width(data-th='Title') 
+                             span {{resource.Title}}
+                          td#rows.row_data.cell_width(data-th='Description')
+                             span {{resource.Description}}
+                          td#rows.row_data.cell_width(data-th='Category')
+                             span {{resource.Category}}
+                          td#rows.row_data.cell_width(data-th='Rating')
+                             span {{resource.Rating}}
+                          td#rows.row_data.cell_width(data-th='Link')
+                             a(href='/resource/{{resource._id}}')
+                               | View
+                        
+

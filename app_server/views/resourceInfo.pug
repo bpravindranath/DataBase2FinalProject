@@ -1,0 +1,40 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+  .resource-info-grid
+      .resource-info-box.resource-info-a
+          .resource-info-sub-box.resource-info-sub-a
+              h1.header_space_grid.text_black= sourceDetails.Title
+          .resource-info-sub-box.resource-info-sub-b
+              dl.uk-description-list-line.uk-contrast
+                  dt.header_text.title_orange Source  
+                  hr.hr_padding.hr_color
+                  |     
+                  dd.text_size.space.text_white #{sourceDetails.Source}
+
+                  dt.header_text.title_orange Categories
+                  hr.hr_padding.hr_color
+                  |     
+                  dd.text_size.space.text_white #{sourceDetails.Category}
+
+                  dt.header_text.title_orange Type of Source
+                  hr.hr_padding.hr_color
+                  |     
+                  dd.text_size.space.text_white #{sourceDetails.Type}
+
+          .resource-info-sub-box.resource-info-sub-c
+              .resource-info-sub-box.resource-info-sub-c-textbox
+                  dl.uk-description-list-line.uk-contrast
+                     dt.header_text.title_orange Description
+                     hr.hr_padding.hr_color
+                     |     
+                     dd.text_size.space.text_white #{sourceDetails.Description}
+     
+              .resource-info-sub-box.resource-info-sub-d-textbox 
+                  dl.uk-description-list-line.uk-contrast
+                     dt.header_text.title_orange Rating
+                     hr.hr_padding.hr_color
+                     dd.rating_space 
+                       +outputRating(sourceDetails.Rating)

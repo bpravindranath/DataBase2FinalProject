@@ -1,0 +1,48 @@
+doctype html
+html(ng-app='bookshelff')
+  head
+    title= title
+    
+    link(rel='stylesheet', href='/stylesheets/hamburger.css')
+    link(rel='stylesheet', href='/stylesheets/uikit.min.css')
+    link(rel='stylesheet', href='/fonts/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+    
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/main.js')
+    script(src='/angular/angular.js') 
+    script(src='/angular/bookshelff.js')
+    script(src='/javascripts/uikit.min.js')
+    
+  
+
+  body
+      
+      #js-nav-panel.nav-panel
+          ul#nav-display
+             li
+                 a.home-link(href='/') Home
+             |             
+             li
+                 a.work-link(href='/about') About
+             |             
+             li
+                 a.capabilities-link(href='/resource') Bookshelff
+                      
+            
+        
+      |
+      .wrapper
+            .nav-bar
+               a.hamburger.hamburger--spin.js-slide-panel.menu-open(onclick='toggle()', type='button')
+                  span.hamburger-box
+                      span.hamburger-inner
+               a.company-name(href='/')
+                  | BOOKSHELFF
+               
+		
+            block content
+
+
+            

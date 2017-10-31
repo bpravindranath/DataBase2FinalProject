@@ -36,5 +36,10 @@ block content
                           td#rows.row_data.cell_width(data-th='Link')
                              a(href='/resource/{{resource._id}}')
                                | View
+                             button(ng-click='removeItem(resource._id)') 
+                               |  Delete
+                            span.spacing.hi-icon.fa-stack.fa-lg(style='font-size: 2rem;')
+                                i.fa.fa-square-o.fa-stack-2x
+                            i.fa.fa-pencil-square.fa-stack-1x
                         
 

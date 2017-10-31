@@ -95,7 +95,7 @@ module.exports.resourceUpdateOne = function(req, res){
 					  sendJsonResponse(res, 400, err);
 					  return; 
 					}
-					location.Ptitle = req.body.Ptitle,
+					location.Source = req.body.Ptitle,
 					location.Type = req.body.Type,
 					location.Title = req.body.Title,
 					location.Description = req.body.Description,
@@ -116,24 +116,17 @@ module.exports.resourceUpdateOne = function(req, res){
 
 module.exports.resourceDeleteOne = function(req, res){
 
-	var locationid = req.params.locationid;
-  	if (locationid) {
-    	Loc
-      		.findByIdAndRemove(locationid)
-      		.exec(
-        		function(err, location) {
-          			if (err) {
-            			sendJsonResponse(res, 404, err);
-						return; 
-					}
-          			sendJsonResponse(res, 204, null);
-        		}
-			);
-	} else {
-    	sendJsonResponse(res, 404, {
-      		"message": "No locationid"
-		}); 
-    }
+	var resourceid = req.params.resourceid;
+
+	List.findByIdAndRemove(resourceid, function(err){
+		if(err){
+			sendJsonResponse(res, 404, err);
+			return;
+		}
+		res.send('deleted');
+	})
+	
+
 };
 
 var sendJsonResponse = function(res, status, content) {

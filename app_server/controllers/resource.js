@@ -28,7 +28,7 @@ var apiOptions = {
 		   	
 		// 	} 
 		// }
-
+		
         res.render('resourceList', {
 
 		title:'Resource List'

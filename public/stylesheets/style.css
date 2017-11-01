@@ -1186,7 +1186,9 @@ body {
 
 }
 
-
+.hi-icon:hover{
+    color: #F6672E;
+}
 
 
 header{

@@ -34,12 +34,13 @@ block content
                           td#rows.row_data.cell_width(data-th='Rating')
                              span {{resource.Rating}}
                           td#rows.row_data.cell_width(data-th='Link')
-                             a(href='/resource/{{resource._id}}')
-                               | View
-                             button(ng-click='removeItem(resource._id)') 
-                               |  Delete
-                            span.spacing.hi-icon.fa-stack.fa-lg(style='font-size: 2rem;')
-                                i.fa.fa-square-o.fa-stack-2x
-                            i.fa.fa-pencil-square.fa-stack-1x
+                             a(href='/resource/{{resource._id}}', style='color:white')
+                                 span.spacing.hi-icon.fa-stack.fa-lg(style='font-size: 1.1rem;')
+                                     i.fa.fa-square-o.fa-stack-2x
+                                     i.fa.fa.fa-book.fa-stack-1x
+                             span.spacing.hi-icon.fa-stack.fa-1x(style='font-size: 1.1rem;', ng-click='removeItem(resource._id)')
+                                  i.fa.fa-square-o.fa-stack-2x
+                                  i.fa.fa-trash.fa-stack-1x
                         
+                             
 

@@ -5,27 +5,28 @@ include _includes/sharedHTMLfunctions
 block content
  .resource-add-grid
    .resource-add-box-a.resource-add-a
-     h1.header_space.text_black Add Resource
+     h1.header_space.text_black Update Resource
+   
    .resource-add-box-b.resource-add-b
      form#addResource.uk-form.uk-form-horizontal(action="", method='post', role='form')
        if(error == 'val')
          h1.title_orange.alert(role='alert') All Fields required, please try again.
-
+        
        .uk-form-row.space
          label.uk-form-label.title_orange(for='title') Title
          .uk-form-controls
-           input#title.uk-width-1-2(type='text', name='title', placeholder='Title')
+           input#title.uk-width-1-2(type='text', name='title', value=sourceDetails.Title)
 
        .uk-form-row.space
          label.uk-form-label.title_orange(for='category') Category
          .uk-form-controls
-           input#category.uk-width-1-2(type='text', placeholder='Category', name='category')
+           input#category.uk-width-1-2(type='text', placeholder='Category', name='category',value=sourceDetails.Category )
 
        .uk-form-row.space
          label.uk-form-label.title_orange(for='type') Source Type
          .uk-form-controls
            select#type(name='type')
-             option(selected='', disabled='', hidden='') Choose Type
+             option(selected='') #{sourceDetails.Type}
              option(value='Article') Article
              option(value='Book') Book
              option(value='Journal') Journal
@@ -39,12 +40,13 @@ block content
        .uk-form-row.space
          label.uk-form-label.title_orange(for='source') Source Link
          .uk-form-controls
-           input#source.uk-width-1-2(type='text', placeholder='Link to Source',name='source')
+           input#source.uk-width-1-2(type='text',value=sourceDetails.Source ,name='source')
 
        .uk-form-row.space
          label.uk-form-label.title_orange(for='rating') Rating
          .uk-form-controls
            select#rating(name='rating')
+            option(selected='') #{sourceDetails.Rating}
              option(value='1') 1
              option(value='2') 2
              option(value='3') 3
@@ -54,7 +56,7 @@ block content
        .uk-form-row.space
          label.uk-form-label.title_orange(for='description') Description
          .uk-form-controls
-           textarea#description.uk-width-1-2(cols='', rows='', placeholder='Description', type='text', name='description')
+           textarea#description(cols='', rows='', type='text', name='description') #{sourceDetails.Description}
 
        .uk-form-row.space
-         button.uk-button(type='submit') Submit
+         button.uk-button(type='submit') Update

@@ -78,6 +78,7 @@ module.exports.resourceUpdateOne = function(req, res){
 		sendJsonResponse(res, 404, {
 			"message" : "Not Found, Location Id Required"
 		});
+		
 		return
 	}
 
@@ -95,12 +96,13 @@ module.exports.resourceUpdateOne = function(req, res){
 					  sendJsonResponse(res, 400, err);
 					  return; 
 					}
-					location.Source = req.body.Ptitle,
-					location.Type = req.body.Type,
-					location.Title = req.body.Title,
-					location.Description = req.body.Description,
-					location.Category = req.body.Category,
-					location.Rating = req.body.Rating;
+					
+					location.Source = req.body.source,
+					location.Type = req.body.type,
+					location.Title = req.body.title,
+					location.Description = req.body.description,
+					location.Category = req.body.category,
+					location.Rating = req.body.rating;
 
 					location.save(function(err, location) {
 				     if (err) {
@@ -135,3 +137,5 @@ var sendJsonResponse = function(res, status, content) {
   	 res.json(content);
 
 };
+
+

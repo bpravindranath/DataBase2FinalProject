@@ -35,14 +35,16 @@ var resourceListCTRL = function($scope, bookshelffData, $http){
 					console.log(error);
 				});	
 		} else {
+
+			console.log("nothing deleted");
 			
 		}
 
 	}
 	
-	
 
 };
+
 
 //gets data from Database by calling the API controller
 var bookshelffData = function ($http){
@@ -50,9 +52,24 @@ var bookshelffData = function ($http){
 };
 
 
+var resourceInfoCtrl = function($scope){
+
+
+};
+
+
+
+var resourceData = function ($http){
+	return $http.get('/api/resource');
+};
+
+
+
 angular
   .module('bookshelff',[])
-  .controller('resourceListCTRL', resourceListCTRL)
+	.controller('resourceListCTRL', resourceListCTRL)
+	.controller('resourceInfoCtrl', resourceInfoCtrl)
+	.service('resourceData', resourceData)
 	.service('bookshelffData', bookshelffData);
 
 

@@ -10,6 +10,8 @@ var ctrlResource = require('../controllers/resource');
 router.get('/resource', ctrlResource.resourceListbyResource);
 router.get('/resource/:resourceid', ctrlResource.resourceReadOne);
 
+
+
 router.post('/resource', ctrlResource.resourceCreate);
 
 router.put('/resource/:resourceid', ctrlResource.resourceUpdateOne);

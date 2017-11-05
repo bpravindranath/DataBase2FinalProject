@@ -20,7 +20,7 @@ block content
                           th#titles.row_header Description
                           th#titles.row_header Category
                           th#titles.row_header Rating
-                          th#titles.row_header More Info
+                          th#titles.row_header More
                           
                       tr.clickable-row(ng-repeat="resource in data.resources | filter : textFilter")
                           td#rows.row_data.cell_width(data-th='Type') 
@@ -38,9 +38,17 @@ block content
                                  span.spacing.hi-icon.fa-stack.fa-lg(style='font-size: 1.1rem;')
                                      i.fa.fa-square-o.fa-stack-2x
                                      i.fa.fa.fa-book.fa-stack-1x
+                                
                              span.spacing.hi-icon.fa-stack.fa-1x(style='font-size: 1.1rem;', ng-click='removeItem(resource._id)')
                                   i.fa.fa-square-o.fa-stack-2x
                                   i.fa.fa-trash.fa-stack-1x
+
+                             a(href='/resource/update/{{resource._id}}', style='color:white')
+                                 span.spacing.hi-icon.fa-stack.fa-lg(style='font-size: 1.1rem;')
+                                     i.fa.fa-square-o.fa-stack-2x
+                                     i.fa.fa-pencil-square-o.fa-stack-1x
+
+                                    
                         
                              
 

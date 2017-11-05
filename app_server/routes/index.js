@@ -12,11 +12,14 @@ router.get('/resource/add/new', ctrlResource.resourceAdd);
 router.post('/resource/add/new', ctrlResource.resourcePost);
 
 
+router.get('/resource/update/:resourceid', ctrlResource.resourceUpdate);
+router.post('/resource/update/:resourceid', ctrlResource.resourcePut);
+
+
 
 /* GET Other page. */
 router.get('/', ctrlOthers.home);
 router.get('/about', ctrlOthers.about);
-
 
 
 module.exports = router;

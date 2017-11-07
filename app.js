@@ -1,3 +1,7 @@
+
+const opn = require('opn');
+
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -56,4 +60,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+opn('http://localhost:3000/');
 module.exports = app;

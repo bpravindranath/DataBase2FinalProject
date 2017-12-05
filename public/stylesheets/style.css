@@ -40,8 +40,14 @@ body{
 
 }
 
+.textarea_content{
+    min-width: 50%;
+    min-height: 150px;
+}
+
 .title_orange{
   color: #F6672E;
+  font-family: "Bookman Old Style"; 
 }
 
 
@@ -106,14 +112,14 @@ body{
 
     background-color: #000;
     height: 40px;
-    /*width: 1200px;*/
+    width: 1200px;
+ 
 
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
     z-index: 999;
-
 
 
 }
@@ -245,7 +251,7 @@ a.company-name {
     display: inline-block;
     transition: color 0.2s;
     font-style: normal;
-    font-family: Varela,sans-serif!important;
+    font-family: "Bookman Old Style"!important;
     z-index: 0;
 }
 
@@ -389,7 +395,7 @@ position: relative;
 .hero-overlay .box .box-content .box-title {
     line-height: 2rem;
     font-size: 2.4rem;
-    font-family: Impact;
+    
     font-weight: 900;
 
     font-family: "Bookman Old Style";
@@ -706,7 +712,6 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(1, 800px);
-
   background-color: #212C38;
 
 
@@ -733,7 +738,7 @@ body {
 .resource-info-sub-box {
   background-color: #212C38;
   color: white;
-  font-family: Impact;
+  font-family: "Bookman Old Style";
   
 }
 
@@ -792,13 +797,16 @@ body {
 
 .rating_space{
   padding-left: 5%;
+  padding-top: 20px;
 }
 
 .space{
   padding: 2% 5%;
 }
 
-
+.rating_padding {
+    padding-top: 10px;
+}
 
 
 .header_text{
@@ -868,13 +876,9 @@ body {
 
 .resource-add-grid {
 
-
-
   display: grid;
-
   grid-template-columns: repeat(4, 1fr);
-
-  grid-template-rows: repeat(4, 200px);   
+  grid-template-rows: repeat(2, 200px);   
 
 }
 
@@ -883,8 +887,7 @@ body {
 .resource-add-box-a {
 
   background-color: #212C38;
-
-    border-bottom: 2px solid white;
+    /* border-bottom: 2px solid white; */
 
 }
 
@@ -893,9 +896,11 @@ body {
 .resource-add-a {
 
     grid-column: 1 / -1;
+    grid-row: 1 /span 1;
 
-    grid-row: 1;
-
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
 }
 
 
@@ -936,49 +941,65 @@ body {
 
 }
 
+.resourceUpdateTitleFont{
+    font-size: 1.3rem;
+}
 
 
 
-
-
+.resourceInfoPadding{
+    padding-bottom: 5%;
+}
 
 .text_black{
 
     color: #F6672E;
 
     font-size: 2.5rem;
-
+  
     font-weight: 100;
 
   }
 
+  .header_info_space{
+    
+        /* margin-bottom: 20%; */
+        display: inline-block;
+        padding: 5% 5%;
+        /* text-align: center; */
+        /* justify-content: center; */
+        text-align: center;
+        /* line-height: 1.9rem; */
+        font-family: "Bookman Old Style"; 
+        letter-spacing: 2px;
+        /* margin-bottom: 0; */
+        
+    
+    }
+    
+.icon_font{
+    font-size: 1.2rem;
+}    
 
+.fixed{
+    position: relative;
+}
 
 .header_space{
 
-    margin-bottom: 20%;
+    /* padding-bottom: 20%; */
 
-    padding: 7% 3%;
+    padding: 0% 5%; 
+    /* padding-bottom: 5%; */
+    text-align: center; 
 
-  
-    
-   
-    
-    text-align: center;
  
+    font-family: "Bookman Old Style";
+    color: #F6672E;
+
     
 
 }
-
-/*.text_black{
-  color: #000;
-  font-size: 2.5rem;
-  font-weight: 100;
-}
-.header_space{
-    margin-bottom: 20%;
-    padding: 2% 5%;
-}*/
 
 
 
@@ -1040,6 +1061,7 @@ body {
     grid-column: 1 / -1;
     grid-row: 1;
 
+
     /*Creating sub-grid for content*/
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1050,7 +1072,7 @@ body {
 .resource-sub-box {
   background-color: #212C38;
   color: white;
-  font-family: Impact;
+  font-family: "Bookman Old Style";
 }
 
 .resource-sub-a {
@@ -1061,14 +1083,17 @@ body {
     /*border-bottom: 2px solid #444;*/
 }
 .resource{
-    padding-top: 100px;
+    padding-top: 10%;
     font-family: "Bookman Old Style";
     color: #F6672E;
 
 }
 
 
-
+.testsss{
+    /* padding-top: 50px; */
+    float: top;
+}
 
 
 .cell_width{
@@ -1077,14 +1102,6 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
 }  
-/* 
-.title_width{
-    width: 40px;
-    max-width: 40px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-} */
 
 
 
@@ -1129,6 +1146,9 @@ body {
    margin: 1em 0;
   min-width: 300px;
   display: table;
+
+
+
 }
 .resource-table tr {
   border-color: #46637f;
@@ -1177,9 +1197,11 @@ body {
   display: inline-block;
 }
 
-.button_space {
-   margin-left: 70%;
+.bfloat{
+    float: right;
+   padding-top: 10%;
 }
+
 
 .uk_button{
   background-color: #FFB200;
@@ -1195,18 +1217,34 @@ body {
 
 }
 
+
+
 .hi-icon:hover{
     color: #F6672E;
 }
+
+
+.hi-icon-list{
+    float: right;
+}
+
+.hi-icon-list:hover:before{
+    content: "Back to Bookshelff ";
+    font-family: "Bookman Old Style";
+    letter-spacing: .4px;
+}
+
 
 .hi-icon-info{
     float: right;
 }
 
+
 .hi-icon-info:hover:before{
     content: "Edit ";
     font-family: "Bookman Old Style";
     letter-spacing: .4px;
+
 }
 
 .hi-icon-arrow{
@@ -1215,10 +1253,26 @@ body {
 
 
 .hi-icon-arrow:hover:after{
+    font-size: 1.2rem;
     content: " Go Back";
     font-family: "Bookman Old Style";
     letter-spacing: .4px;
 }
+
+
+.hi-icon-arrow-item{
+    float: left;
+}
+
+
+.hi-icon-arrow-item:hover:after{
+    content: " Back to Resource";
+    font-family: "Bookman Old Style";
+    letter-spacing: .4px;
+}
+
+
+
 
 header{
   text-align:right;

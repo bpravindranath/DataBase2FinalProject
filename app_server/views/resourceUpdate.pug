@@ -5,7 +5,14 @@ include _includes/sharedHTMLfunctions
 block content
  .resource-add-grid
    .resource-add-box-a.resource-add-a
-     h1.header_space.text_black Update Resource
+     .resource-info-sub-box.resource-info-sub-a
+       h1.header_space.text_black.fixed Update Resource
+       a(href='/resource/' + sourceDetails.ID, style='color:white')
+         span.spacing.hi-icon.hi-icon-arrow-item
+           i.fa.fa-arrow-left.fa-2x
+       a(href='/resource/{{sourceDetails._id}}', style='color:white')
+         span.spacing.hi-icon.hi-icon-list
+           i.fa.fa-list.fa-2x
    
    .resource-add-box-b.resource-add-b
      form#addResource.uk-form.uk-form-horizontal(action="", method='post', role='form')
@@ -13,17 +20,17 @@ block content
          h1.title_orange.alert(role='alert') All Fields required, please try again.
         
        .uk-form-row.space
-         label.uk-form-label.title_orange(for='title') Title
+         label.uk-form-label.title_orange.resourceUpdateTitleFont(for='title') Title
          .uk-form-controls
            input#title.uk-width-1-2(type='text', name='title', value=sourceDetails.Title)
 
        .uk-form-row.space
-         label.uk-form-label.title_orange(for='category') Category
+         label.uk-form-label.title_orange.resourceUpdateTitleFont(for='category') Category
          .uk-form-controls
            input#category.uk-width-1-2(type='text', placeholder='Category', name='category',value=sourceDetails.Category )
 
        .uk-form-row.space
-         label.uk-form-label.title_orange(for='type') Source Type
+         label.uk-form-label.title_orange.resourceUpdateTitleFont(for='type') Source Type
          .uk-form-controls
            select#type(name='type')
              option(selected='') #{sourceDetails.Type}
@@ -38,12 +45,12 @@ block content
              option(value='Commentary') Commentary
 
        .uk-form-row.space
-         label.uk-form-label.title_orange(for='source') Source Link
+         label.uk-form-label.title_orange.resourceUpdateTitleFont(for='source') Source Link
          .uk-form-controls
            input#source.uk-width-1-2(type='text',value=sourceDetails.Source ,name='source')
 
        .uk-form-row.space
-         label.uk-form-label.title_orange(for='rating') Rating
+         label.uk-form-label.title_orange.resourceUpdateTitleFont(for='rating') Rating
          .uk-form-controls
            select#rating(name='rating')
             option(selected='') #{sourceDetails.Rating}
@@ -54,9 +61,9 @@ block content
              option(value='5') 5
 
        .uk-form-row.space
-         label.uk-form-label.title_orange(for='description') Description
+         label.uk-form-label.title_orange.resourceUpdateTitleFont(for='description') Description
          .uk-form-controls
-           textarea#description(cols='', rows='', type='text', name='description') #{sourceDetails.Description}
+           textarea#description.textarea_content(cols='', rows='', type='text', name='description') #{sourceDetails.Description}
 
        .uk-form-row.space
          button.uk-button(type='submit') Update

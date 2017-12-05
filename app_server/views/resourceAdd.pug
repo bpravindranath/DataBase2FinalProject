@@ -5,7 +5,11 @@ include _includes/sharedHTMLfunctions
 block content
  .resource-add-grid
    .resource-add-box-a.resource-add-a
-     h1.header_space.text_black Add Resource
+     .resource-info-sub-box.resource-info-sub-a
+       h1.header_space.text_black.fixed Add Resource
+       a(href='/resource/', style='color:white')
+         span.spacing.hi-icon.hi-icon-arrow
+           i.fa.fa-arrow-left.fa-2x
    .resource-add-box-b.resource-add-b
      form#addResource.uk-form.uk-form-horizontal(action="", method='post', role='form')
        if(error == 'val')

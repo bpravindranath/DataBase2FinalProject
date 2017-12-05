@@ -52,8 +52,9 @@ module.exports.about = function (req, res) {
 
 		about_body: {
 			header: 'About',
-			body_section_A: 'Research, the scary eight letter word, in academia is unavoidable. To succeed at anything in school, whether homework, paper, or test, one must do the time, that is, research. Research encompass a lot of events. Most of all these events orient themselves around one thing: Resource. Simply, a resource is something that is useful for a task at hand or future task. Now a days, resources can be gathered from almost anywhere, YouTube, Google, libraries, journals, etc… All these different avenues to accrue resources begin to make remembering and storing resources a nightmare for individual and especially for collaborative research.',
-			body_section_B: 'I wanted to make resource gathering easier especially for collaborative efforts. I thought there had to be an easier way to document several things: First, where you got your resource. Second, add a description about your resource. Third, add information so others can obtain resource. Finally, have control on how you organize documentation in your resource directory. Finally, make it easy for users to navigate. That is when I thought what if a platform existed that could solve these issues. '
+			body_section_A: 'Research, the scary eight letter word, in academia is unavoidable. To succeed at anything in school, whether it is homework, a paper, or a test, one must do the time, that is, research. Research encompass a lot of events. Most of all these events orient themselves around one thing: Resource. Simply, a resource is something that is useful for a task at hand or future task. Now a days, resources can be gathered from almost anywhere, YouTube, Google, libraries, journals, etc… All these different avenues to accrue resources begin to make remembering and storing resources a lot more difficult.',
+			
+			body_section_B: 'I wanted to make resource gathering easier by having a place where I could store relevant resource and find them easily. So I decided to create Bookshelff.'
 		}
 
 	});

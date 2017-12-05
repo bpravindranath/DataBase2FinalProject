@@ -1,5 +1,6 @@
 
 var mongoose = require('mongoose');  
+
 var List = mongoose.model('ListData');
 
 
@@ -50,8 +51,6 @@ module.exports.resourceReadOne = function(req, res){
 };
 
 module.exports.resourceCreate = function(req, res){
-
-
 
 	List.create({
 
@@ -134,6 +133,7 @@ module.exports.resourceDeleteOne = function(req, res){
 var sendJsonResponse = function(res, status, content) {
 
 	 res.status(status);
+
   	 res.json(content);
 
 };

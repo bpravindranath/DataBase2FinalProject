@@ -4,11 +4,13 @@ block content
      .resource-grid(ng-controller='resourceListCTRL')
          .resource-box.about-a
               .resource-sub-box.resource-sub-a
-                  h1#yo.resource.lineElements Resource List
-                  span.button_space.uk-button
-                      a.white(href="/resource/add/new") Add Resource
+                  h1.resource.lineElements BookShelff
+                  span.bfloat
+                      span.uk-button
+                          a.white(href="/resource/add/new") Add Resource
                   hr.hr_color
                   .error.resource_Angular {{message}}
+              
               .resource-sub-box.resource-sub-b
                   label.resource_Angular(for="filter") Filter results 
                   input#filter(type="text", name="filter", ng-model="textFilter", style="margin-left: 10px")
@@ -49,6 +51,5 @@ block content
                                      i.fa.fa-pencil-square-o.fa-stack-1x
 
                                     
-                        
-                             
+                                 
 

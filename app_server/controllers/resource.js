@@ -46,7 +46,8 @@ var renderUpdatePage = function (req, res, resourceDetail) {
 		   Title: resourceDetail.Title,
 		   Description: resourceDetail.Description,
 		   Category: resourceDetail.Category,
-		   Rating: resourceDetail.Rating
+		   Rating: resourceDetail.Rating,
+		   ID: resourceDetail._id
 	   }
 
    });

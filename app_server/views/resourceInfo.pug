@@ -6,16 +6,16 @@ block content
   .resource-info-grid
       .resource-info-box.resource-info-a
           .resource-info-sub-box.resource-info-sub-a
-              h1.header_space_grid.text_black= sourceDetails.Title
-              a(href='/resource/', style='color:white')
-                  span.spacing.hi-icon.hi-icon-arrow
+              h1.header_space_grid.text_black.resourceInfoPadding= sourceDetails.Title
+              a(href='/resource/', style='color: white')
+                  span.icon_font.spacing.hi-icon.hi-icon-arrow
                       i.fa.fa-arrow-left.fa-2x
-              a(href='/resource/update/'+ sourceDetails.Id, style='color:white')
-                  span.spacing.hi-icon.hi-icon-info
+              a(href='/resource/update/'+ sourceDetails.Id, style='color: white')
+                  span.icon_font.spacing.hi-icon.hi-icon-info
                       i.fa.fa-pencil-square-o.fa-2x
           .resource-info-sub-box.resource-info-sub-b
               dl.uk-description-list-line.uk-contrast
-                  dt.header_text.title_orange Source  
+                  dt.header_text.title_orange Source 
                   hr.hr_padding.hr_color
                   |     
                   dd.text_size.space.text_white #{sourceDetails.Source}

@@ -51,11 +51,9 @@ var bookshelffData = function ($http){
 	return $http.get('/api/resource');
 };
 
-
 var resourceInfoCtrl = function($scope){
 
 };
-
 
 var resourceData = function ($http){
 	return $http.get('/api/resource');

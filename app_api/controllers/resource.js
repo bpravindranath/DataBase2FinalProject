@@ -61,11 +61,11 @@ module.exports.resourceCreate = function(req, res){
 		Category     : req.body.category,
 		Rating       : parseInt(req.body.rating, 10),
 		 
-		},function(err, location) {
+		},function(err, resource) {
 	       if (err) {
 	      		sendJsonResponse(res, 400, err);
 	    } else {
-	      		sendJsonResponse(res, 201, location);
+	      		sendJsonResponse(res, 201, resource);
 	    	}
 	});
 };

@@ -4,7 +4,7 @@ var resourceListCTRL = function($scope, bookshelffData, $http){
 
 	bookshelffData
 	  .then(function(success) {
-	  	$scope.message = (success.data.length > 0) ? success.data.length + " Resources" : "No locations found";
+	  	$scope.message = (success.data.length > 0) ? success.data.length + " books" : "no books";
 	  	$scope.data = { resources : success.data };
 
 	  },function myError(error){
@@ -25,8 +25,9 @@ var resourceListCTRL = function($scope, bookshelffData, $http){
 
 					//reload resourceList by making a get request to the API
 					$http.get('/api/resource').then(function(success){
-					$scope.message = (success.data.length > 0) ? success.data.length + " Resources" : "No locations found";
+					$scope.message = (success.data.length > 0) ? success.data.length + " books" : "no books";
 					$scope.data = {resources: success.data};
+					
 					
 
 						//logs error if request was bad

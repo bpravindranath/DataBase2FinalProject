@@ -3,62 +3,62 @@ extends layout
 include _includes/sharedHTMLfunctions
 
 block content
- .resource-add-grid
-   .resource-add-box-a.resource-add-a
-     .resource-info-sub-box.resource-info-sub-a
-       h1.header_space.text_black.fixed Add Resource
-       a(href='/resource/', style='color:white')
-         span.spacing.hi-icon.hi-icon-arrow
-           i.fa.fa-arrow-left.fa-2x
-   .resource-add-box-b.resource-add-b
-     form#addResource.uk-form.uk-form-horizontal(action="", method='post', role='form')
-       if(error == 'val')
-         h1.title_orange.alert(role='alert') All Fields required, please try again.
+  a(href='/resource/', style='color:white')
+    span.hi-icon.hi-icon-arrow
+      i.fa.fa-arrow-left.fa-2x
+  form.form-sign(action="", method='post', role='form')
+    if(error == 'val')
+      h1.title_orange.alert(role='alert') All Fields required, please try again.
+    .text-center.mb-4
+      img.mb-4(src='https://getbootstrap.com/assets/brand/bootstrap-solid.svg', alt='', width='72', height='72')
+      h1.h3.mb-3.font-weight-normal Add Book
+    
+    .form(role='form')
+        .form-group.row
+            label.col-2.col-form-label(for='title') Title
+            .col-10
+              input#example-text-input.form-control(type='text', name='title', placeholder='Title')
+        hr(size='10')
+        .form-group.row
+            label.col-2.col-form-label(for='category') Category
+            .col-10
+              input#example-search-input.form-control(type='text', placeholder='Category', name='category')
+        hr(size='10')
+        .form-group.row
+            label.col-2.col-form-label(for='example-email-input') Email
+            .col-10
+              select(name='type')
+                option(selected='', disabled='', hidden='') Choose Type
+                option(value='Article') Article
+                option(value='Book') Book
+                option(value='Journal') Journal
+                option(value='Video') Video
+                option(value='Blog') Blog
+                option(value='Encylopdia') Encyclopedia
+                option(value='Website') Website
+                option(value='Dictionary') Dictionary
+                option(value='Commentary') Commentary
+        hr(size='10')      
+        .form-group.row
+            label.col-2.col-form-label(for='source') Source 
+            .col-10
+              input#example-url-input.form-control(type='text', placeholder='Link to Source',name='source')
 
-       .uk-form-row.space
-         label.uk-form-label.title_orange(for='title') Title
-         .uk-form-controls
-           input#title.uk-width-1-2(type='text', name='title', placeholder='Title')
-
-       .uk-form-row.space
-         label.uk-form-label.title_orange(for='category') Category
-         .uk-form-controls
-           input#category.uk-width-1-2(type='text', placeholder='Category', name='category')
-
-       .uk-form-row.space
-         label.uk-form-label.title_orange(for='type') Source Type
-         .uk-form-controls
-           select#type(name='type')
-             option(selected='', disabled='', hidden='') Choose Type
-             option(value='Article') Article
-             option(value='Book') Book
-             option(value='Journal') Journal
-             option(value='Video') Video
-             option(value='Blog') Blog
-             option(value='Encylopdia') Encyclopedia
-             option(value='Website') Website
-             option(value='Dictionary') Dictionary
-             option(value='Commentary') Commentary
-
-       .uk-form-row.space
-         label.uk-form-label.title_orange(for='source') Source Link
-         .uk-form-controls
-           input#source.uk-width-1-2(type='text', placeholder='Link to Source',name='source')
-
-       .uk-form-row.space
-         label.uk-form-label.title_orange(for='rating') Rating
-         .uk-form-controls
-           select#rating(name='rating')
-             option(value='1') 1
-             option(value='2') 2
-             option(value='3') 3
-             option(value='4') 4
-             option(value='5') 5
-
-       .uk-form-row.space
-         label.uk-form-label.title_orange(for='description') Description
-         .uk-form-controls
-           textarea#description.uk-width-1-2(cols='', rows='', placeholder='Description', type='text', name='description')
-
-       .uk-form-row.space
-         button.uk-button(type='submit') Submit
+        hr(size='10')
+        .form-group.row
+            label.col-2.col-form-label(for='rating') Rating
+            .col-10
+              select(name='rating')
+                option(value='1') 1
+                option(value='2') 2
+                option(value='3') 3
+                option(value='4') 4
+                option(value='5') 5
+        
+        hr(size='10')      
+        .form-group.row
+            label.col-2.col-form-label(for='description') Description
+            .col-10
+              textarea(cols='', rows='', placeholder='Description', type='text', name='description', style='width: 100%;')
+        
+        button.submitbutton(type='submit') Submit

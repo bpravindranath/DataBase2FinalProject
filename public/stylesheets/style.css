@@ -1,3 +1,157 @@
+footer{
+    padding-top: 10%;
+}
+.overflow{
+    height: 700px;
+    overflow: scroll;
+
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+
+.center-card{
+align-content: center;
+align-items: center;
+}
+.hr {
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
+}
+.pb-5, .py-5 {
+    padding-bottom: 0rem!important;
+}
+header{
+    text-align:right;
+    padding:10px;
+  
+  
+    background-color:#343a40!important;
+  }
+
+  .contact-font{
+    font-size: .9rem;
+    color: #6c757d!important;
+  }
+
+  #bookcaseletter{
+    color: black; 
+    font-family: "Bookman Old Style"; 
+    font-size: 20px;
+    margin: 10px 0 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 50em;
+    animation: type 4s steps(60, end); 
+  }
+  .hero-text {
+    text-align: center;
+    position: relative;
+    font-family: "Bookman Old Style"; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+  #bookcasebutton{
+    color: black; 
+    font-family: "Bookman Old Style"; 
+    font-size: 20px;
+    margin: 10px 0 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+   
+    animation: type 8s steps(60, end); 
+  }
+  .hero-button {
+    text-align: center;
+    position: relative;
+    font-family: "Bookman Old Style"; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.8);
+}
+  
+  
+  @keyframes type{ 
+    from { width: 0; } 
+  } 
+
+  .button {
+    font-family: "Bookman Old Style"; 
+    color: rgba(255, 255, 255, 0.8);
+    padding: 15px 72px;
+    /* border: 2px solid rgb(#000, 0); */
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    overflow:hidden;
+    transition: .5s;
+    background:transparent;
+
+}
+.addbutton {
+    font-family: "Bookman Old Style"; 
+    color: rgba(255, 255, 255, 0.8);
+    padding: 5px 8px;
+    /* border: 2px solid rgb(#000, 0); */
+    float: right;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    overflow:hidden;
+    transition: .5s;
+    background:transparent;
+
+}
+
+.submitbutton {
+    font-family: "Bookman Old Style"; 
+    color: black;
+    padding: 5px 8px;
+    /* border: 2px solid rgb(#000, 0); */
+    float: left;
+    text-align: center;
+    text-transform: uppercase;
+    
+    overflow:hidden;
+    transition: .5s;
+    background:transparent;
+
+}
+
+.button:hover{
+    border-radius: 30px;
+    background:  rgba(0, 0, 0, 0.1);
+    transition: .5s;
+}
+button:focus { outline-style: none; }
+
+.addbutton:hover{
+    border-radius: 30px;
+    background:  rgba(0, 0, 0, 0.1);
+    transition: .5s;
+}
+
+.submitbutton:hover{
+    border-radius: 30px;
+    background:  rgba(0, 0, 0, 0.1);
+    transition: .5s;
+}
+.form-sign {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    margin: 0 auto;
+}
 
 
 /************************** CSS for Layout Template or General CSS for all Templates**********************/
@@ -5,8 +159,8 @@
     box-sizing: border-box;
 }
 
-html{
-  background-color: #212C38;
+/* html{
+  background-color: white;
 }
 body{
     margin-top: 0;
@@ -16,7 +170,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     font-style: normal;
-}
+} */
 
 
 .paragraph_space {
@@ -111,8 +265,8 @@ body{
     position: fixed;
 
     background-color: #000;
-    height: 40px;
-    width: 1200px;
+    height: 60px;
+    width: 100%;
  
 
     margin-left: auto;
@@ -121,6 +275,7 @@ body{
     right: 0;
     z-index: 999;
 
+    
 
 }
 
@@ -158,7 +313,7 @@ a.company-name {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: .7rem;
+    font-size: .9rem;
     font-family: "Bookman Old Style";
 }
 
@@ -1073,6 +1228,8 @@ body {
   background-color: #212C38;
   color: white;
   font-family: "Bookman Old Style";
+ 
+  
 }
 
 .resource-sub-a {
@@ -1080,6 +1237,7 @@ body {
     grid-row: 1;
     padding: 0 5%;
     font-size: 150%;
+  
     /*border-bottom: 2px solid #444;*/
 }
 .resource{
@@ -1133,7 +1291,8 @@ body {
     grid-row:2/ -1;
     padding: 0 5%;
     font-size: 1.5rem;
-
+    height: 100%;
+   
 }
 
 
@@ -1195,6 +1354,7 @@ body {
 
 .lineElements{
   display: inline-block;
+  font-size: 2rem;
 }
 
 .bfloat{
@@ -1218,9 +1378,12 @@ body {
 }
 
 
-
+.hi-icon{
+    padding-left: 20px;
+    color:black;
+}
 .hi-icon:hover{
-    color: #F6672E;
+    /* color: #F6672E; */
 }
 
 
@@ -1241,7 +1404,7 @@ body {
 
 
 .hi-icon-info:hover:before{
-    content: "Edit ";
+    content: "Back to Book ";
     font-family: "Bookman Old Style";
     letter-spacing: .4px;
 
@@ -1254,7 +1417,8 @@ body {
 
 .hi-icon-arrow:hover:after{
     font-size: 1.2rem;
-    content: " Go Back";
+    
+    content: " Back to Shelf";
     font-family: "Bookman Old Style";
     letter-spacing: .4px;
 }
@@ -1274,22 +1438,51 @@ body {
 
 
 
-header{
-  text-align:right;
-  padding:10px;
-  margin-bottom:10px;
-  border-radius: .4em;
-  background-color:#34495E;
+
+
+
+
+
+
+/* NEW */
+
+/* .padding-top{
+    padding-top:60px;
+} */
+
+
+.hero-image {
+    /* The image used */
+    /* background-image: url("/images/dark.jpg"); */
+
+   
+    /* Set a specific height */
+    height: 600px;
+    
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+    .hero-image {  height: 400px;}
 }
 
-header a{
-  font-size:20px;
-  color:#FFFFFF;
-  width:40px;
-  height:40px;
-  line-height:40px;
-  margin-left:10px;
-  text-align:center;
-  display:inline-block;
+/* Place text in the middle of the image */
+
+
+
+
+
+
+
+.need-padding{
+  padding-top: 200px;  
 }
 
+.table-content{
+    overflow: hidden;
+    overflow: scroll;
+}

@@ -1,55 +1,145 @@
 extends layout
 
+mixin outputRating(rating)
+ - for (var i = 1; i <= rating; i++)
+     span.glyphicon.glyphicon-star
+ - for (i = rating; i < 5; i++)
+     span.glyphicon.glyphicon-star-empty
+
 block content
-     .resource-grid(ng-controller='resourceListCTRL')
-         .resource-box.about-a
-              .resource-sub-box.resource-sub-a
-                  h1.resource.lineElements BookShelff
-                  span.bfloat
-                      span.uk-button
-                          a.white(href="/resource/add/new") Add Resource
-                  hr.hr_color
-                  .error.resource_Angular {{message}}
-              
-              .resource-sub-box.resource-sub-b
-                  label.resource_Angular(for="filter") Filter results 
-                  input#filter(type="text", name="filter", ng-model="textFilter", style="margin-left: 10px")
-                  
-                  table#sup.resource-table
-                      tr
-                          th#titles.row_header Type
-                          th#titles.row_header Title
-                          th#titles.row_header Description
-                          th#titles.row_header Category
-                          th#titles.row_header Rating
-                          th#titles.row_header More
-                          
-                      tr.clickable-row(ng-repeat="resource in data.resources | filter : textFilter")
-                          td#rows.row_data.cell_width(data-th='Type') 
-                             span {{resource.Type}}
-                          td#rows.row_data.title_width(data-th='Title') 
-                             span {{resource.Title}}
-                          td#rows.row_data.cell_width(data-th='Description')
-                             span {{resource.Description}}
-                          td#rows.row_data.cell_width(data-th='Category')
-                             span {{resource.Category}}
-                          td#rows.row_data.cell_width(data-th='Rating')
-                             span {{resource.Rating}}
-                          td#rows.row_data.cell_width(data-th='Link')
-                             a(href='/resource/{{resource._id}}', style='color:white')
-                                 span.spacing.hi-icon.fa-stack.fa-lg(style='font-size: 1.1rem;')
-                                     i.fa.fa-square-o.fa-stack-2x
-                                     i.fa.fa.fa-book.fa-stack-1x
-                                
-                             span.spacing.hi-icon.fa-stack.fa-1x(style='font-size: 1.1rem;', ng-click='removeItem(resource._id)')
-                                  i.fa.fa-square-o.fa-stack-2x
-                                  i.fa.fa-trash.fa-stack-1x
 
-                             a(href='/resource/update/{{resource._id}}', style='color:white')
-                                 span.spacing.hi-icon.fa-stack.fa-lg(style='font-size: 1.1rem;')
-                                     i.fa.fa-square-o.fa-stack-2x
-                                     i.fa.fa-pencil-square-o.fa-stack-1x
+    .album.py-5.bg-light(ng-controller='resourceListCTRL')
+        .container
+            label.resource_Angular(for="filter",style='color:black') Filter Books 
+            input#filter(type="text", name="filter", ng-model="textFilter", style="margin-left: 10px")
+            
+           
+            a(href='/resource/add/new')
+                button.addbutton(style='color:black') Add Book
+            div 
+                small There are a total of {{message}} on this shelf
+            hr(size='10')
+            .row.overflow
+                .col-md-4(ng-repeat="resource in data.resources | filter : textFilter",)
+                    .card.mb-4.box-shadow.center-card
+                        img.card-img-top(src='/images/open-book.png', alt='bookThumbnail', style='height: 60px; width: 60px; display: block; z-index: 10;')
+                        .card-body.center-card
+                            small.font-weight-bold {{resource.Title}}
+                            hr(margin= '0 auto',width='50%')
+                            p.card-text(data-th='Description') {{resource.Description}}
+                            hr(size='10')
+                            .d-flex.justify-content-between.align-items-center
+                                .btn-group
+                                    a(href='/resource/{{resource._id}}', style='color:black')
+                                        span.spacing.hi-icon.fa-stack.fa-lg(style='font-size: 1.1rem;')
+                                            i.fa.fa-square-o.fa-stack-2x
+                                            i.fa.fa.fa-book.fa-stack-1x
+                                    span.spacing.hi-icon.fa-stack.fa-1x(style='font-size: 1.1rem;', ng-click='removeItem(resource._id)')
+                                            i.fa.fa-square-o.fa-stack-2x
+                                            i.fa.fa-trash.fa-stack-1x
+                                    a(href='/resource/update/{{resource._id}}', style='color:black')
+                                        span.spacing.hi-icon.fa-stack.fa-lg(style='font-size: 1.1rem;')
+                                            i.fa.fa-square-o.fa-stack-2x
+                                            i.fa.fa-pencil-square-o.fa-stack-1x
+                                small.text-muted
+                                    span Rating {{resource.Rating}} 
+                                     
+                      
 
-                                    
+        //- .resource-grid(ng-controller='resourceListCTRL')
+        //-     .resource-box.about-a
+        //-         .resource-sub-box.resource-sub-a
+                    //- h1.resource.lineElements 
+                    //-     span Barnabas has {{message}} on his shelves
+                    //- span.bfloat
+                    //-     span.uk-button
+                    //-         a.white(href="/resource/add/new") Add Book 
+        //-             hr.hr_color
+        //-         .resource-sub-box.resource-sub-b
+        //-             label.resource_Angular(for="filter") Filter results 
+        //-             input#filter(type="text", name="filter", ng-model="textFilter", style="margin-left: 10px")
+                    
+        //-             table#example.resource-table.display(style='width:100%')
+        //-                 thead
+        //-                     tr
+        //-                         th#titles.row_header Type
+        //-                         th#titles.row_header Title
+        //-                         th#titles.row_header Description
+        //-                         th#titles.row_header Category
+        //-                         th#titles.row_header Rating
+        //-                         th#titles.row_header More
+        //-                 tbody.table-content
+        //-                     tr.clickable-row(ng-repeat="resource in data.resources | filter : textFilter")
+        //-                         td#rows.row_data.cell_width(data-th='Type') 
+        //-                             span {{resource.Type}}
+        //-                         td#rows.row_data.title_width(data-th='Title') 
+        //-                             span {{resource.Title}}
+        //-                         td#rows.row_data.cell_width(data-th='Description')
+        //-                             span {{resource.Description}}
+        //-                         td#rows.row_data.cell_width(data-th='Category')
+        //-                             span {{resource.Category}}
+        //-                         td#rows.row_data.cell_width(data-th='Rating')
+        //-                             span {{resource.Rating}}
+        //-                         td#rows.row_data.cell_width(data-th='Link')
+        //-                             a(href='/resource/{{resource._id}}', style='color:white')
+        //-                                 span.spacing.hi-icon.fa-stack.fa-lg(style='font-size: 1.1rem;')
+        //-                                     i.fa.fa-square-o.fa-stack-2x
+        //-                                     i.fa.fa.fa-book.fa-stack-1x
+                                        
+        //-                             span.spacing.hi-icon.fa-stack.fa-1x(style='font-size: 1.1rem;', ng-click='removeItem(resource._id)')
+        //-                                 i.fa.fa-square-o.fa-stack-2x
+        //-                                 i.fa.fa-trash.fa-stack-1x
+
+        //-                             a(href='/resource/update/{{resource._id}}', style='color:white')
+        //-                                 span.spacing.hi-icon.fa-stack.fa-lg(style='font-size: 1.1rem;')
+        //-                                     i.fa.fa-square-o.fa-stack-2x
+        //-                                     i.fa.fa-pencil-square-o.fa-stack-1x
+
+        //- .resource-grid.need-padding(ng-controller='resourceListCTRL')
+        //-     table#example.display(style='width:100%')
+        //-         thead
+        //-             tr
+        //-                 th Name
+        //-                 th Position
+        //-                 th Office
+        //-                 th Age
+        //-                 th Start date
+        //-                 th Salary
+        //-         tbody
+        //-             tr.clickable-row(ng-repeat="resource in data.resources | filter : textFilter")
+        //-                 td(data-th='Type') 
+        //-                     span {{resource.Type}}
+        //-                 td(data-th='Title') 
+        //-                     span {{resource.Title}}
+        //-                 td(data-th='Description') 
+        //-                     span {{resource.Description}}
+        //-                 td(data-th='Category') 
+        //-                     span {{resource.Category}}
+        //-                 td(data-th='Rating') 
+        //-                     span {{resource.Rating}}
+        //-                 td(data-th='Link') 
+        //-                     a(href='/resource/{{resource._id}}', style='color:white')
+        //-                                 span.spacing.hi-icon.fa-stack.fa-lg(style='font-size: 1.1rem;')
+        //-                                     i.fa.fa-square-o.fa-stack-2x
+        //-                                     i.fa.fa.fa-book.fa-stack-1x
+                                        
+        //-                     span.spacing.hi-icon.fa-stack.fa-1x(style='font-size: 1.1rem;', ng-click='removeItem(resource._id)')
+        //-                         i.fa.fa-square-o.fa-stack-2x
+        //-                         i.fa.fa-trash.fa-stack-1x
+
+        //-                     a(href='/resource/update/{{resource._id}}', style='color:white')
+        //-                         span.spacing.hi-icon.fa-stack.fa-lg(style='font-size: 1.1rem;')
+        //-                             i.fa.fa-square-o.fa-stack-2x
+        //-                             i.fa.fa-pencil-square-o.fa-stack-1x
+        
+        //-         tfoot
+        //-             tr
+        //-                 th Name
+        //-                 th Position
+        //-                 th Office
+        //-                 th Age
+        //-                 th Start date
+        //-                 th Salary
+                                            
                                  
 

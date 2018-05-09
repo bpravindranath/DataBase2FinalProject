@@ -48,6 +48,12 @@ var main = function() {
         //     window.location = $(this).data("href");
         // });
 
+        $('#example').DataTable( {
+            "scrollY":        "400px",
+            "scrollCollapse": true,
+            "paging":         false
+        } );
+
 
         $('#addResource').submit(function (e){
 
@@ -67,7 +73,13 @@ var main = function() {
 
 $(document).ready(main);
 
-
+// $(document).ready(function() {
+//     $('#example').DataTable( {
+//         "scrollY":        "200px",
+//         "scrollCollapse": true,
+//         "paging":         false
+//     } );
+// } );
  
 
 ////////////////////////////////////////////////////////////////////////////////////
